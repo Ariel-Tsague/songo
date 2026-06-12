@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' wss://*.peerjs.com https://*.peerjs.com;">
+    <title>SONGO P2P</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+
+<body>
+    <div id="ok">
+        <div id="tout">
+            <h1>JoUeR à SoNgO!! 🎮</h1>
+            <hr>
+
+            <div id="menu-connexion" style="text-align: center; margin-bottom: 20px;">
+                <button type="button" class="ip" id="creer-partie">Créer une partie (Hôte - J1)</button>
+                <button type="button" class="ip" id="rejoindre-partie">Rejoindre une partie (J2)</button>
+
+                <div id="zone-id" style="display: none; margin-top: 15px;">
+                    <p>Partagez ce code avec votre adversaire : <strong id="partage-id" style="background: #eee; padding: 5px; color: bordeaux;">...</strong></p>
+                    <p id="attente-statut">En attente de connexion du Joueur 2...</p>
+                </div>
+
+                <div id="zone-rejoindre" style="display: none; margin-top: 15px;">
+                    <input type="text" id="code-hote" placeholder="Coller le code de l'hôte ici">
+                    <button type="button" class="ip" id="valider-connexion">Se connecter</button>
+                </div>
+            </div>
+
+            <h2 id="start" style="display: none;">Lancer la partie</h2>
+            <div id="champs" style="display: none;">
+                <p style="font-weight: 700;font-style: oblique;border: 4px 0px 4px 0px solid blue;padding-left: 30px; border-bottom-left-radius: 30px;">Veuillez entrer vos pseudonymes de joueurs</p>
+                <div id="champ">
+                    <p>Pseudo Joueur 1 :</p>
+                    <input type="text" id="champNom" placeholder=" pseudo J1">
+                </div><br>
+                <div id="champ2">
+                    <p>Pseudo Joueur 2:</p>
+                    <input type="text" id="champNom2" placeholder="pseudo J2">
+                    <button type="button" class="ip" id="valider">Valider</button>
+                </div>
+            </div>
+            <div id="tablejeu" class="jeu" style="display: none;">
+                <div id="a">
+                    <div class="case casej2">5</div>
+                    <div class="case casej2">5</div>
+                    <div class="case casej2">5</div>
+                    <div class="case casej2">5</div>
+                    <div class="case casej2">5</div>
+                    <div class="case casej2">5</div>
+                    <div class="case casej2">5</div>
+                </div>
+                <div id="b">
+                    <div class="case casej1">5</div>
+                    <div class="case casej1">5</div>
+                    <div class="case casej1">5</div>
+                    <div class="case casej1">5</div>
+                    <div class="case casej1">5</div>
+                    <div class="case casej1">5</div>
+                    <div class="case casej1">5</div>
+                </div>
+                <button type="button" class="ip" id="restart">Recommencer la partie</button>
+                <p id="infos">Cliquer sur une case pour distribuer</p>
+            </div>
+        </div>
+
+        <div id="etat" class="jeu" style="display: none;">
+            <p style="font-weight: bold; color: blue;">Mon rôle : Joueur <span id="role-affiche">?</span></p>
+            <hr>
+            <p id="nom" style="color: rgb(83, 82, 82);">Joueur 1 :
+                <span id="pseudoAffiche" style="color: rgb(0, 0, 0);">...</span>
+            </p>
+            <p>Score J1 : <span id="score1">0</span> pts</p>
+            <hr>
+            <p id="nom2" style="color: rgb(83, 82, 82);">Joueur 2 : <span id="pseudoAffiche2" style="color: rgb(0, 0, 0);">...</span></p>
+            <p>Score J2 : <span id="score2">0</span> pts</p>
+            <p id="res" style="display: none;"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
