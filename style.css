@@ -1,0 +1,220 @@
+body {
+    background-image: url('images/songo.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    opacity: 1;
+    background-size: cover;
+    background-color: rgb(71, 71, 73);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#tout {
+    display: flex;
+    border-radius: 30px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    min-width: 600px;
+    background-color: rgba(22, 18, 18, 0.942);
+    padding: 15px;
+}
+
+h1 {
+    border: 6px double blue;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgb(5, 154, 241);
+    color: rgb(11, 0, 128);
+    font-style: oblique;
+    text-shadow: 5px 5px 5px white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+h2 {
+    border: 6px double blue;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgb(5, 241, 99);
+    color: rgb(11, 0, 128);
+    text-shadow: 5px 5px 5px white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+#a,
+#b {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 4px double black;
+    border-radius: 50px;
+    padding: 9px;
+    margin: 20px;
+    width: 400px;
+}
+
+#a {
+    background-color: rgb(227, 176, 176);
+}
+
+#b {
+    background-color: rgb(63, 136, 63);
+}
+
+#a div,
+#b div {
+    margin: 9px;
+    padding: 3px;
+    border: 3px solid black;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-color: black;
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+
+/* Animations de survol interactives pour les deux joueurs humains */
+
+#b div:hover {
+    cursor: pointer;
+    scale: 1.3;
+    background-color: rgb(20, 25, 172);
+    transform: translateY(-30px);
+    color: rgb(255, 255, 255);
+    transition-duration: 0.3s;
+}
+
+#restart {
+    margin-left: 140px;
+}
+
+#a div:hover {
+    cursor: pointer;
+    background-color: rgb(162, 23, 23);
+    color: rgb(255, 255, 255);
+    scale: 1.3;
+    transform: translateY(-30px);
+    transition-duration: 0.3s;
+}
+
+.jeu {
+    display: none;
+}
+
+#start:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition-duration: 0.3s;
+    background-color: rgb(146, 236, 10);
+}
+
+.case {
+    opacity: 0;
+    transform: translateX(105px) rotate(-200deg);
+    animation: apparitionDouce 3s forwards;
+}
+
+@keyframes apparitionDouce {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.case {
+    animation-delay: 0.5s;
+}
+
+#tablejeu {
+    border: 6px double rgb(39, 36, 36);
+    border-radius: 40px;
+    padding: 9px;
+    border-color: blue;
+    background-color: gray;
+}
+
+#infos {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: underline;
+    color: rgb(78, 76, 76);
+}
+
+#ok {
+    border-radius: 40px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.4);
+    align-items: center;
+    padding: 20px;
+}
+
+#etat {
+    background-color: color-mix(in hsl increasing hue, black 40%, white 70%);
+    border: 4px double green;
+    display: flex;
+    padding: 50px;
+    border-radius: 40px;
+    flex-direction: column;
+    margin-left: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+}
+
+#champs div {
+    background-color: black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+#champ p,
+#champ2 p {
+    color: white;
+    margin: 5px;
+}
+
+input {
+    border-radius: 50px;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    border: 3px solid rgb(173, 237, 11);
+    border-radius: 50px;
+    font-weight: 700;
+    background-color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: green;
+    color: white;
+}
+
+#res {
+    font-weight: 900;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#tablejeu {
+    display: flex;
+    flex-direction: column;
+}
